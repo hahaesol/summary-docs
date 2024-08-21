@@ -8,3 +8,6 @@ theme:
     - navigation.instant.progress
     - toc.follow
     - toc.integrate
+markdown_extensions:
+  - toc:
+      permalink: true
