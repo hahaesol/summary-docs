@@ -2,3 +2,7 @@ site_name: Haesol's Summary Docs
 site_url: https://hahaesol.github.io/summary-docs
 theme:
   name: material
+  features:
+    - navigation.instant
+    - navigation.instant.prefetch
+    - navigation.instant.progress
