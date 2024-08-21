@@ -3,11 +3,16 @@ site_url: https://hahaesol.github.io/summary-docs
 theme:
   name: material
   features:
-    - navigation.instant
-    - navigation.instant.prefetch
-    - navigation.instant.progress
+    - navigation.footer
+    - navigation.indexes
+    - navigation.sections
+    - navigation.top
+    - navigation.tracking
+    # - navigation.instant
+    # - navigation.instant.prefetch
+    # - navigation.instant.progress
     - toc.follow
-    - toc.integrate
+    # - toc.integrate
 markdown_extensions:
   - toc:
       permalink: true
