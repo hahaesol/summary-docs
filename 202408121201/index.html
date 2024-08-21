@@ -1,0 +1,963 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://hahaesol.github.io/summary-docs/202408121201/">
+      
+      
+        <link rel="prev" href="../202408121200/">
+      
+      
+        <link rel="next" href="../202408121203/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.32">
+    
+    
+      
+        <title>AIKU 24-2 세미나 5회 이미지 매칭 로컬 특징과 그 너머(DUSt3R) - Haesol's Summary Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.3cba04c6.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#aiku-24-2-5-dust3r" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Haesol&#39;s Summary Docs" class="md-header__button md-logo" aria-label="Haesol's Summary Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Haesol's Summary Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              AIKU 24-2 세미나 5회 이미지 매칭 로컬 특징과 그 너머(DUSt3R)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1M8 13h8v-2H8v2m9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1 0 1.71-1.39 3.1-3.1 3.1h-4V17h4a5 5 0 0 0 5-5 5 5 0 0 0-5-5Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5M7 15a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Haesol&#39;s Summary Docs" class="md-nav__button md-logo" aria-label="Haesol's Summary Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Haesol's Summary Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../202408121137/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Java 와 Docker(k8s) 잘하면 평생 먹고 산다
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../202408121146/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AIKU 24-2 DeepIntoDeep 10회 딥러닝 입문하기 - Segmentation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../202408121155/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AIKU 24-2 Momentum 5회 LLaVA-Mededit
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../202408121200/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    비디오에서 AIKU 24-2 모멘텀 5회 딥 지오메트리 인식 카메라 자체 보정하기
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    AIKU 24-2 세미나 5회 이미지 매칭 로컬 특징과 그 너머(DUSt3R)
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    AIKU 24-2 세미나 5회 이미지 매칭 로컬 특징과 그 너머(DUSt3R)
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      핵심주제
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      타임라인
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="타임라인">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-beyond" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 📷 이미지 매칭 로컬 피처 및 Beyond
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-3d" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 3D 포인트 맵 생성 및 카메라 파라미터 최적화 방법
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-3d" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 3D 데이터 표현을 위한 포인트 맵 설명
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-3d" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 논문 아키텍처와 3D 리그레션 로스 설명
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. 글로벌 얼라이먼트를 통한 이미지 최적화 설명
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-dust3r-3d" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. DUST3R 3D 리컨스트럭션 실험 결과
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-3d" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. 3D 지오메트리 및 카메라 보정 발표
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../202408121203/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AI in Semiconductor Manufacturing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../202408121331/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AIKU 24-2 DeepIntoDeep 9회 딥러닝 입문하기 - Object Detection
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../202408121616/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PHONEME-LEVEL BERT FOR ENHANCED PROSODY OF TEXT-TO-SPEECH WITH GRAPHEME PREDICTIONS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../202408171304/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6년 묵은 레거시를 제거하며 앞으로의 6년 준비하기
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../202408181730/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    카프카 기반 리그오브레전드 챔피언 추천 서비스
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      핵심주제
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      타임라인
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="타임라인">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-beyond" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 📷 이미지 매칭 로컬 피처 및 Beyond
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-3d" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 3D 포인트 맵 생성 및 카메라 파라미터 최적화 방법
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-3d" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 3D 데이터 표현을 위한 포인트 맵 설명
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-3d" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 논문 아키텍처와 3D 리그레션 로스 설명
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. 글로벌 얼라이먼트를 통한 이미지 최적화 설명
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-dust3r-3d" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. DUST3R 3D 리컨스트럭션 실험 결과
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-3d" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. 3D 지오메트리 및 카메라 보정 발표
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="aiku-24-2-5-dust3r">AIKU 24-2 세미나 5회 이미지 매칭 로컬 특징과 그 너머(DUSt3R)<a class="headerlink" href="#aiku-24-2-5-dust3r" title="Permanent link">&para;</a></h1>
+<p>흥미로운 내용 3가지 :</p>
+<ul>
+<li><strong>DUSt3R</strong> 모델은 카메라 칼리브레이션이나 뷰포인트 정보 없이 3D 재구성 가능</li>
+<li><strong>3D 리컨스트럭션</strong>을 위해 포인트 맵 생성과 카메라 파라미터 최적화 필요</li>
+<li><strong>DUST3R</strong> 모델은 카메라 정보 없이도 상대적으로 정확한 3D 리컨스트럭션 가능</li>
+</ul>
+<p>이 영상은 이미지 매칭 및 3D 재구성을 위한 최신 모델인 'DUSt3R'에 대한 심도 깊은 세미나 발표입니다. 발표자는 크로코 모델과의 연관성을 통해 더스터의 논문 내용을 상세히 설명하고, 다양한 이미지 처리 기법과 3D 포인트 맵의 생성 방법을 다룹니다. 또한, 마스터 모델이 더스터의 성능을 개선하는 방법과 함께 연구 결과를 공유하며, 실제 실험에서의 성과를 통해 3D 리컨스트럭션의 중요성을 강조합니다. 이 영상을 통해 이미지 매칭 및 3D 기술에 대한 이해를 높이고, 최신 연구 동향을 파악할 수 있습니다.</p>
+<h2 id="_1">핵심주제<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>세 가지 주요 <strong>논문</strong>이 이미지 매칭의 발전에 기여하고 있다.</p>
+<ul>
+<li>
+<p><strong>크로코</strong> 모델은 3D 이미지 생성의 기초를 다지며, <strong>더스터</strong>는 그 성능을 향상시켜준다.</p>
+</li>
+<li>
+<p>마스터 논문은 더스터를 기반으로 <strong>정확도를 높이기 위해</strong> 새로운 헤드를 추가하는 연구이다.</p>
+</li>
+</ul>
+<p>3D 포인트 맵 및 카메라 <strong>파라미터</strong> 최적화 방법이 강조되고 있다.</p>
+<ul>
+<li>
+<p>MVS 퀄리티와 <strong>촬영 기법</strong>은 카메라 파라미터의 정확도에 크게 의존한다.</p>
+</li>
+<li>
+<p>키포인트 매칭을 이용한 <strong>SFM</strong> 기법이 사용되지만, 노이즈에 취약하다는 단점도 있다.</p>
+</li>
+</ul>
+<p>포인트 맵은 3D 데이터의 <strong>핵심</strong>로 사용된다.</p>
+<ul>
+<li>
+<p>포인트 맵은 개별 3D 점의 좌표를 나타내며, <strong>RGB 이미지</strong>의 해상도에 따라 구성된다.</p>
+</li>
+<li>
+<p>이 과정을 통해 <strong>그라운드 트루스 포인트 맵</strong>이 생성된다.</p>
+</li>
+</ul>
+<p>글로벌 <strong>얼라이먼트</strong>가 다양한 이미지 최적화를 가능하게 한다.</p>
+<ul>
+<li>
+<p>주어진 이미지 집합에서 다양한 텍스처가 생성되어 비주얼 콘텐츠가 공유된다.</p>
+</li>
+<li>
+<p>이 과정에서 <strong>포즈와 스케일링</strong> 변수를 이용한 최적화 식이 적용된다.</p>
+</li>
+</ul>
+<p>DUST3R 모델이 3D <strong>리컨스트럭션</strong> 결과를 제공합니다.</p>
+<ul>
+<li>
+<p>이 모델은 카메라 정보 없이도 의미 있는 결과를 도출하며, 평균 오류가 2.7mm에 불과하다.</p>
+</li>
+<li>
+<p>프리 트레이닝과 고해상도가 출력 성능에 중요한 역할을 한다.</p>
+</li>
+</ul>
+<h2 id="_2">타임라인<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h3 id="1-beyond">1. 📷 이미지 매칭 로컬 피처 및 Beyond<a class="headerlink" href="#1-beyond" title="Permanent link">&para;</a></h3>
+<p><img alt="" src="../assets/images/a29a1c0e440180f37d7def43e1831112_MD5.jpg" />
+- 발표자는 <strong>DUSt3R</strong> 모델에 대한 논문을 중심으로 세미나를 진행함.</p>
+<ul>
+<li>
+<p>네이버 랩스 유럽에서 발표한 세 가지 논문 중 하나로, 크로코(CRoKo), 더스터(DUSt3R), 마스터(MASTER)가 포함됨.</p>
+</li>
+<li>
+<p>첫 번째 논문 <strong>크로코</strong>는 셀프 슈퍼바이즈드 프리트레이닝 모델을 3차원에 적용한 것임.</p>
+</li>
+<li>
+<p>크로코 모델은 두 개의 입력 이미지를 인코딩하고, 디코더를 통해 첫 번째 이미지의 마스킹된 부분을 재구성함.</p>
+</li>
+<li>
+<p><strong>더스터(DUSt3R)</strong>는 크로코 모델의 디코더를 추가로 활용하여 카메라 칼리브레이션이나 뷰포인트 포즈 정보 없이 작동하는 모델로, "D and Unst Stereo 3D Reconstruction"의 약자임.</p>
+</li>
+</ul>
+<h3 id="2-3d">2. 3D 포인트 맵 생성 및 카메라 파라미터 최적화 방법<a class="headerlink" href="#2-3d" title="Permanent link">&para;</a></h3>
+<p><img alt="" src="../assets/images/dd23995f5fcc299bdc277a313d0f1b34_MD5.jpg" />
+- 두 장 이상의 이미지 제공 시, 모든 포인트 맵을 공통 기준 프레임으로 표현하는 방법을 제시하였다.</p>
+<ul>
+<li>
+<p>다양한 3D 태스크가 논문을 통해 설명되며, 3D 리컨스트럭션은 3D 지오메트리와 카메라 파라미터 예측이 목표다.</p>
+</li>
+<li>
+<p>특히 MVS 퀄리티는 입력 이미지와 카메라 파라미터의 품질에 의존하며, 고된 카메라를 통해 3D 포인트 맵을 도출하는 것이 이 논문의 핵심이다.</p>
+</li>
+<li>
+<p>카메라 파라미터는 렌즈와 센서 위치로 결정되며, 이미지 패널의 이동과 확대, 기울기를 알려준다.</p>
+</li>
+<li>
+<p>SFM은 키포인트 매칭을 통해 픽셀 덤프를 얻은 후, 'Bundle Adjustment'로 3D 좌표와 카메라 파라미터를 최적화하지만 노이즈에 취약한 단점이 있다.</p>
+</li>
+<li>
+<p>멀티뷰 스테레오 방법은 두 개 이상의 뷰포인트에서 삼각 측량으로 3D 재구성하며, 정밀한 카메라 칼리브레이션에 의존하는 문제가 있다.</p>
+</li>
+</ul>
+<h3 id="3-3d">3. 3D 데이터 표현을 위한 포인트 맵 설명<a class="headerlink" href="#3-3d" title="Permanent link">&para;</a></h3>
+<p><img alt="" src="../assets/images/bbdec62f04957a8e30f46025b658f0e0_MD5.jpg" />
+- 레이드 웍스는 <strong>포인트 맵</strong>으로 3D 데이터를 표현하며, 이는 개별 3D 점의 좌표를 나타낸다.</p>
+<ul>
+<li>
+<p>포인트 맵은 너비 W와 높이 H를 가지며, RGB 이미지의 해상도에 기반한 3차원 배열로 구성된다.</p>
+</li>
+<li>
+<p>카메라의 트랜스포메이션은 R3로 이루어지며, 특정 카메라에서 얻은 포인트 Xn은 다른 카메라의 좌표계로 변환된다.</p>
+</li>
+<li>
+<p>논문에서는 이러한 과정을 통해 <strong>그라운드 트루스 포인트 맵</strong>을 생성했다고 한다.</p>
+</li>
+</ul>
+<h3 id="4-3d">4. 논문 아키텍처와 3D 리그레션 로스 설명<a class="headerlink" href="#4-3d" title="Permanent link">&para;</a></h3>
+<p><img alt="" src="../assets/images/c19aff675cdb11160ef75e49277c0de7_MD5.jpg" />
+- 이 논문은 입력으로 두 개의 <strong>RGB 이미지</strong>를 받아, 두 개의 <strong>포인트 맵</strong>과 <strong>컨피던스 맵</strong>을 출력하는 아키텍처를 설명합니다.</p>
+<ul>
+<li>
+<p>크로코 사전 학습의 이점을 활용해 네트워크를 프리트레이닝하여, 초기 가중치로 로코를 사용해 더 나은 성능을 발휘하도록 합니다.</p>
+</li>
+<li>
+<p>이 네트워크는 <strong>동일한 브랜치</strong>로 구성되며, ViT 인코더는 입력 이미지를 인코딩하고, 디코더는 셀프 어텐션, 크로스 어텐션, MLP로 이루어져 있습니다.</p>
+</li>
+<li>
+<p>최종적으로 각 브랜치에서 <strong>리그레션 헤드</strong>를 통과해 포인트 맵과 컨피던스 맵을 출력하며, 3D 리그레션 로스는 유클리드 거리로 정의됩니다.</p>
+</li>
+<li>
+<p>마지막으로 모델 훈련 결과를 보여주며, RGB 인풋 이미지, 스맵, 컨피던스 맵, 그리고 3D 컨스트럭션이 잘 작동한다고 보고합니다.</p>
+</li>
+</ul>
+<h3 id="5">5. 글로벌 얼라이먼트를 통한 이미지 최적화 설명<a class="headerlink" href="#5" title="Permanent link">&para;</a></h3>
+<p><img alt="" src="../assets/images/eecb66e7c42ce9a4efe882f0ecfad753_MD5.jpg" />
+- 앞서 설명한 네트워크는 두 개의 이미지에 대해서만 작동하며, 글로벌 얼라이먼트는 <strong>다양한 이미지 결합</strong> 방법에 대한 설명이다.</p>
+<ul>
+<li>
+<p>우선 주어진 이미지 집합에서 개가게 이미지를 바탕으로 텍스를 형성하고, 이를 엣지를 통해 비주얼 콘텐츠를 공유하는 그래프를 만든다.</p>
+</li>
+<li>
+<p>그 후 모든 쌍에 대해 앞서 언급한 네트워크를 통과시키며, 글로벌 옵티마이제이션 부분에서는 모든 페어와이즈 예측을 <strong>공통 사용자 계로 정렬</strong>한다.</p>
+</li>
+<li>
+<p>이를 위해 포즈와 스케일링 변수를 이용하여 최종 로스를 식으로 표현하며, 이 식을 통해 카메라 사진의 카메라 파라미터를 구할 수 있다.</p>
+</li>
+<li>
+<p>마지막으로, 이 공식은 앞에서 설명한 포인트 맵으로 변환하는 방법을 제시하며, 이를 통해 카메라 포즈와 인트로 스맵, 최적을 각각 구할 수 있다.</p>
+</li>
+</ul>
+<h3 id="6-dust3r-3d">6. DUST3R 3D 리컨스트럭션 실험 결과<a class="headerlink" href="#6-dust3r-3d" title="Permanent link">&para;</a></h3>
+<p><img alt="" src="../assets/images/6215f38fc50da1b840e945854b7dc1cf_MD5.jpg" />
+- 세 가지 요소를 모두 추정할 수 있는데, DUST3R 모델은 베스트 어시스를 달성하지 못했으나, 카메라 파라미터 없이도 <strong>상대적으로</strong> 유용한 결과를 보여주었다.</p>
+<ul>
+<li>
+<p>에버리지 오류는 2.7mm, 컴플리트 오류는 0.88mm로, 카메라 정보 없이도 의미 있는 결과를 도출했다고 한다.</p>
+</li>
+<li>
+<p>크로코 영향을 사용했을 때 결과가 더 좋았으며, 프리 트레이닝과 하이 레솔루션이 중요한 역할을 한다.</p>
+</li>
+<li>
+<p>DUST3R 3D 리컨스트럭션 프레임워크와 관련된 마스터 논문에서는 <strong>정확도를 보완하기 위해</strong> 새로운 헤드를 추가하여 로컬 피처를 학습시킨다고 설명된다.</p>
+</li>
+<li>
+<p>각 네트워크는 입력 이미지를 기반으로 3D 포인트 컨피던스와 로컬 피처를 예측하며, 기하 및 피처 기반 매칭을 수행한다.</p>
+</li>
+</ul>
+<h3 id="7-3d">7. 3D 지오메트리 및 카메라 보정 발표<a class="headerlink" href="#7-3d" title="Permanent link">&para;</a></h3>
+<p><img alt="" src="../assets/images/46955e7bc31c0660aa361ebcfce99230_MD5.jpg" />
+- 결과를 보면, 이 그림은 마스터의 던스를 보여주고 있으며, 카메라가 극단적이어서 시각적으로 유사한 점이 거의 없다.</p>
+<ul>
+<li>
+<p>하지만 잘 칭찬하는 요소들이 있다는 것을 보여주고 있다.</p>
+</li>
+<li>
+<p>예측된 3D 지오메트리는 초점 거리 도출, 카메라 보정, 카메라 포즈 추정에 유용하게 사용된다.</p>
+</li>
+<li>
+<p>이 발표를 마치겠습니다. 감사합니다.</p>
+</li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../202408121200/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 비디오에서 AIKU 24-2 모멘텀 5회 딥 지오메트리 인식 카메라 자체 보정하기">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                비디오에서 AIKU 24-2 모멘텀 5회 딥 지오메트리 인식 카메라 자체 보정하기
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../202408121203/" class="md-footer__link md-footer__link--next" aria-label="Next: AI in Semiconductor Manufacturing">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                AI in Semiconductor Manufacturing
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.footer", "navigation.indexes", "navigation.sections", "navigation.top", "navigation.tracking", "toc.follow"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.471ce7a9.min.js"></script>
+      
+    
+  </body>
+</html>

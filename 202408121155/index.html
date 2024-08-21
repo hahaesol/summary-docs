@@ -1,0 +1,1013 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://hahaesol.github.io/summary-docs/202408121155/">
+      
+      
+        <link rel="prev" href="../202408121146/">
+      
+      
+        <link rel="next" href="../202408121200/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.32">
+    
+    
+      
+        <title>AIKU 24-2 Momentum 5회 LLaVA-Mededit - Haesol's Summary Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.3cba04c6.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#aiku-24-2-momentum-5-llava-mededit" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Haesol&#39;s Summary Docs" class="md-header__button md-logo" aria-label="Haesol's Summary Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Haesol's Summary Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              AIKU 24-2 Momentum 5회 LLaVA-Mededit
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1M8 13h8v-2H8v2m9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1 0 1.71-1.39 3.1-3.1 3.1h-4V17h4a5 5 0 0 0 5-5 5 5 0 0 0-5-5Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5M7 15a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Haesol&#39;s Summary Docs" class="md-nav__button md-logo" aria-label="Haesol's Summary Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Haesol's Summary Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../202408121137/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Java 와 Docker(k8s) 잘하면 평생 먹고 산다
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../202408121146/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AIKU 24-2 DeepIntoDeep 10회 딥러닝 입문하기 - Segmentation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    AIKU 24-2 Momentum 5회 LLaVA-Mededit
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    AIKU 24-2 Momentum 5회 LLaVA-Mededit
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      핵심주제
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      타임라인
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="타임라인">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-llava-med" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 📘 LLaVA-Med 모델 소개
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. AI 모델의 발전과 바이오메디컬 이미지 문제
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-vqa" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. ️🔍VQA의 한계를 극복하기 위한 제너레이티브 방법
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 바이오메디컬 데이터 품질 개선 및 캡션 활용
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. 모델 그림과 바이오메디컬 도메인 훈련 과정 설명
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. 모델의 정확성 평가 및 성능 비교
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-vqa" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. ️📊바이오메디컬 VQA 데이터의 성능 비교
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. ️🧠파인튜닝과 모델 성능 향상에 대한 논의
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../202408121200/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    비디오에서 AIKU 24-2 모멘텀 5회 딥 지오메트리 인식 카메라 자체 보정하기
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../202408121201/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AIKU 24-2 세미나 5회 이미지 매칭 로컬 특징과 그 너머(DUSt3R)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../202408121203/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AI in Semiconductor Manufacturing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../202408121331/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AIKU 24-2 DeepIntoDeep 9회 딥러닝 입문하기 - Object Detection
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../202408121616/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PHONEME-LEVEL BERT FOR ENHANCED PROSODY OF TEXT-TO-SPEECH WITH GRAPHEME PREDICTIONS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../202408171304/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6년 묵은 레거시를 제거하며 앞으로의 6년 준비하기
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../202408181730/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    카프카 기반 리그오브레전드 챔피언 추천 서비스
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      핵심주제
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      타임라인
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="타임라인">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-llava-med" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 📘 LLaVA-Med 모델 소개
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. AI 모델의 발전과 바이오메디컬 이미지 문제
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-vqa" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. ️🔍VQA의 한계를 극복하기 위한 제너레이티브 방법
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 바이오메디컬 데이터 품질 개선 및 캡션 활용
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. 모델 그림과 바이오메디컬 도메인 훈련 과정 설명
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. 모델의 정확성 평가 및 성능 비교
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-vqa" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. ️📊바이오메디컬 VQA 데이터의 성능 비교
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. ️🧠파인튜닝과 모델 성능 향상에 대한 논의
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="aiku-24-2-momentum-5-llava-mededit">AIKU 24-2 Momentum 5회 LLaVA-Mededit<a class="headerlink" href="#aiku-24-2-momentum-5-llava-mededit" title="Permanent link">&para;</a></h1>
+<p>흥미로운 내용 3가지 :</p>
+<ul>
+<li>라바(LLaVA)는 '라지 랭귀지 비전 어시스턴트'의 약자다.</li>
+<li>이미지 캡션과 바운딩 박스 값을 활용해 대화 세트를 생성한다.</li>
+<li>바이오메디컬 이미지 처리에서 제너럴 도메인 데이터로만 학습되어 성능을 높이는 노력이 필요하다.</li>
+</ul>
+<p>이 영상은 '라바 매드'라는 생명과학 분야의 최신 AI 모델에 대한 발표로, 모델의 구조와 데이터 생성 과정을 자세히 설명합니다. 이 모델은 바이오메디컬 이미지를 이해하고 대화할 수 있는 능력을 갖추도록 설계되었습니다. 이를 통해 기존 모델의 한계를 극복하고 전문적인 지식을 요구하는 질문에 잘 응답하도록 훈련되었습니다. 결론적으로, 영상은 AI가 어떻게 도메인 특화된 지식을 습득하여 실제 응용 가능성을 높이는지를 보여주는 주제를 다루고 있습니다.</p>
+<h2 id="_1">핵심주제<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>LLaVA-Med는 <strong>바이오메디컬</strong> 이미지 처리에 특화된 <strong>멀티모달</strong> AI 모델이다.</p>
+<ul>
+<li>
+<p>LLaVA는 '라지 랭귀지 비전 어시스턴트'의 약자로, 바이오메디컬 이미지에서의 Q&amp;A 생성을 목표로 한다.</p>
+</li>
+<li>
+<p>이 모델은 이미지 캡션과 바운딩 박스 정보를 활용하여 질문과 대화 세트를 생성할 수 있다.</p>
+</li>
+<li>
+<p>기존의 멀티모달 스크립트의 한계를 극복하기 위해 설계되었다.</p>
+</li>
+</ul>
+<p>기존 <strong>VQA</strong>의 한계를 극복하기 위해 <strong>제너레이티브</strong> 방법이 도입되었다.</p>
+<ul>
+<li>
+<p>기존 VQA 방법은 답변 선택에 한정되어 있으나, 제너레이티브 방법은 오픈엔디드 대화를 가능하게 한다.</p>
+</li>
+<li>
+<p>모델은 이미지와 텍스트 데이터를 바탕으로 GPT-4를 이용해 바이오메디컬 데이터를 생성한다.</p>
+</li>
+<li>
+<p>이 과정은 머신과 휴먼 협력을 통해 새로운 데이터셋을 만드는 것을 포함한다.</p>
+</li>
+</ul>
+<p>바이오메디컬 데이터 품질 개선을 위해 <strong>캡션 활용</strong>이 중요하다.</p>
+<ul>
+<li>
+<p>캡션의 길이에 따라 질문의 구체성을 달리하여 질문-답변 세트를 생성한다.</p>
+</li>
+<li>
+<p>데이터 품질을 개선하기 위해 여러 버전의 데이터를 생성하며, 이미지를 활용한 대화를 이끌어낸다.</p>
+</li>
+<li>
+<p>이러한 방식으로 충분한 데이터 수집과 품질 개선이 이루어진다.</p>
+</li>
+</ul>
+<p>모델의 <strong>정확성 평가</strong>는 성능 비교에 초점을 맞추고 있다.</p>
+<ul>
+<li>
+<p>모델의 대화 능력은 단계적으로 향상되며, 훈련 데이터의 양에 의해 성능이 좋아진다.</p>
+</li>
+<li>
+<p>LLaVA-Med는 사용자의 질문에 대해 구체적인 답변을 제공하며, 기존 LLaVA와 비교해 월등한 성과를 보인다.</p>
+</li>
+<li>
+<p>정성적 및 정량적 평가를 통한 성능 검증이 이루어진다.</p>
+</li>
+</ul>
+<p><strong>파인튜닝</strong> 과정이 모델 성능 향상에 중요한 역할을 한다.</p>
+<ul>
+<li>
+<p>파인튜닝 시간을 늘리면 모델 성능이 향상되며, 이는 예측 가능한 결과다.</p>
+</li>
+<li>
+<p>바이오메디컬 분야에서 인스트럭션 팔로잉 데이터셋을 효과적으로 생성하는 데 기여했다.</p>
+</li>
+<li>
+<p>할루시네이션과 인덱스 문제 등 여전히 해결해야 할 과제가 존재한다.</p>
+</li>
+</ul>
+<h2 id="_2">타임라인<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h3 id="1-llava-med">1. 📘 LLaVA-Med 모델 소개<a class="headerlink" href="#1-llava-med" title="Permanent link">&para;</a></h3>
+<p><img alt="" src="../assets/images/464c95dcb5a0ff96824a54446572d6a1_MD5.jpg" />
+- 라바(LLaVA)는 <strong>'라지 랭귀지 비전 어시스턴트'</strong>의 약자다.</p>
+<ul>
+<li>
+<p>이 논문은 기존 멀티모달 스크립트의 한계를 극복하기 위해 설계되었다.</p>
+</li>
+<li>
+<p>사용자는 이미지의 캡션과 바운딩 박스 값을 넣어 질문과 대화 세트를 생성한다.</p>
+</li>
+<li>
+<p>데이터는 간단한 질문 답변, 상세한 설명 요구, 그리고 추론이 필요할 경우의 세 가지 타입으로 구성된다.</p>
+</li>
+<li>
+<p>목표는 LM(언어 모델) 비전 모델의 능력을 효과적으로 활용하는 것이다.</p>
+</li>
+</ul>
+<h3 id="2-ai">2. AI 모델의 발전과 바이오메디컬 이미지 문제<a class="headerlink" href="#2-ai" title="Permanent link">&para;</a></h3>
+<p><img alt="" src="../assets/images/489b3b5a4a8740b71ca766cba2c07e17_MD5.jpg" />
+- 파인 튜닝된 큐를 사용하고 비전 인코더로 클립 비주얼 인코더를 적용했으며, 마지막 레이어를 리니어 프로젝션으로 변경했다.</p>
+<ul>
+<li>
+<p>제너럴 도메인 생성 대화형 생성 AI 멀티모달 모델이 발전 중이나, 도메인 스페시픽한 부분은 <strong>부족하다는</strong> 이야기가 있다.</p>
+</li>
+<li>
+<p>사람들은 바이오메디컬 이미지에 집중했으나, 제너럴 도메인 데이터로만 학습되어 이해력과 대화 능력이 매우 떨어지는 문제가 존재한다.</p>
+</li>
+<li>
+<p>이에 대한 해결책으로 이미지를 묻고 답할 수 있는 오픈엔디드 리서치를 제안하며, 바이오메디컬 책과 같은 연구가 언급된다.</p>
+</li>
+<li>
+<p>라바 메드는 엔드투엔드인 반면, 비주얼 매드 알파카는 이미지 캡셔닝 모델과 L&amp;M을 연결하여 클래스파이어를 사용하므로 차이가 있다.</p>
+</li>
+</ul>
+<h3 id="3-vqa">3. ️🔍VQA의 한계를 극복하기 위한 제너레이티브 방법<a class="headerlink" href="#3-vqa" title="Permanent link">&para;</a></h3>
+<p><img alt="" src="../assets/images/42064db2e033133cc3d61fa5486dec53_MD5.jpg" />
+- 기존의 VQA 방법은 <strong>그리스크리스</strong>에서 좋은 성능을 보이는 반면, 최적의 답을 고르는 문제에 그칩니다.</p>
+<ul>
+<li>
+<p>이 영상에서는 <strong>오픈엔디드</strong> 대화를 이어가기 위해 제너레이티브 메소드를 활용합니다.</p>
+</li>
+<li>
+<p>모델 아키텍처는 <strong>랭기지 모델의 프리픽스 튜닝</strong>과 유사하며, 리니어 프로젝션을 사용하고 매드라 해는데, 메디컬 쪽 논문 데이터가 존재합니다.</p>
+</li>
+<li>
+<p>이곳에서 추출된 이미지와 텍스트를 바탕으로 GPT-4로 <strong>셀프 인스트럭터</strong> 바이오메디컬 데이터를 생성하는 점이 특이합니다.</p>
+</li>
+<li>
+<p>바이오메디컬 비주얼 인스트럭션 페어링 데이터는 부족한 멀티모달 바이오메디컬 데이터셋을 보완하기 위해 머신과 휴먼이 협력하여 새로운 데이터셋을 생성하는 과정을 포함하고 있습니다.</p>
+</li>
+</ul>
+<h3 id="4">4. 바이오메디컬 데이터 품질 개선 및 캡션 활용<a class="headerlink" href="#4" title="Permanent link">&para;</a></h3>
+<p><img alt="" src="../assets/images/3878dc5201e22d6f02e7e3008ddaa060_MD5.jpg" />
+- 캡션의 길이에 따라 질문을 간결하게 또는 자세히 설명하였으며, <strong>캡션은 30단어에서 분으로 이루어졌다</strong>.</p>
+<ul>
+<li>
+<p>PMC 15M 중 600K를 사용했으며, 바이오메디컬 이미지에 대한 Q&amp;A 생성 요청을 GPT-4 모델을 통해 진행하였다.</p>
+</li>
+<li>
+<p>이미지가 너무 짧지 않도록 <strong>포맷 논문에서 관련 문장을</strong> 가져와 사용하며, 데이터 품질을 개선하기 위해 세 가지 버전을 만들었다.</p>
+</li>
+<li>
+<p>인라인 맨션을 컨텍스트로 간주하여 생성 시 사용된 데이터는 60K였으며, 추가로 10K 이하의 작은 데이터로 총 세 개의 데이터를 만들었다.</p>
+</li>
+<li>
+<p>이러한 방식으로 이미지와 캡션을 활용하여 대화가 생성된다.</p>
+</li>
+</ul>
+<h3 id="5">5. 모델 그림과 바이오메디컬 도메인 훈련 과정 설명<a class="headerlink" href="#5" title="Permanent link">&para;</a></h3>
+<p><img alt="" src="../assets/images/7ee4e039e5cc22411eaccbf790e389ca_MD5.jpg" />
+- 모델 그림은 일반 도메인 LM을 사용해 바이오메디컬 도메인으로 훈련되었으며, 현재 모델 그림은 라바 그림이다.</p>
+<ul>
+<li>
+<p>훈련 과정은 두 가지 단계로 나뉘며, 첫 번째 단계는 바이오메디컬 개념과 피처 라인트를 활용하여 PCM 15를 필터링하는 것이다.</p>
+</li>
+<li>
+<p>두 번째 단계에서는 엔드 투 엔드 인스트럭션 튜닝을 진행하며, 비주얼 인코더 가중치는 고정하고, 프로젝션 레이어와 사전 학습된 가중치를 사용하여 바이오메디컬 언어와 이미지 데이터를 파인 튜닝한다.</p>
+</li>
+<li>
+<p>마지막으로, 평가 데이터셋은 193개의 새로운 질문으로 구성되며, GPT-4을 활용해 모델의 응답을 평가한다.</p>
+</li>
+</ul>
+<h3 id="6">6. 모델의 정확성 평가 및 성능 비교<a class="headerlink" href="#6" title="Permanent link">&para;</a></h3>
+<p><img alt="" src="../assets/images/8619ebee60b14460f6115d99bfa13010_MD5.jpg" />
+- 이 모델은 이미지 컨텍스트와 캡션이 주어졌을 때 질문에 대한 정확성을 수치적으로 나타내고자 한다.</p>
+<ul>
+<li>
+<p>1단계 학습으로는 약간의 메디컬 지식이 있지만 대화 능력은 떨어지며, 2단계 학습을 통해 더 우수한 성능을 발휘한다.</p>
+</li>
+<li>
+<p>인스트럭션 데이터가 늘어날수록 성능이 좋아지는 것을 확인할 수 있다.</p>
+</li>
+<li>
+<p>정성적 평가에서도 LLaVA-Med가 사용자의 질문에 대해 훨씬 더 구체적으로 잘 설명하며, 기존 일반 모델인 LLaVA와 비교할 때 확연한 차이를 보인다.</p>
+</li>
+<li>
+<p>마지막으로 기존 벤치마크에 대한 성능도 평가하게 된다.</p>
+</li>
+</ul>
+<h3 id="7-vqa">7. ️📊바이오메디컬 VQA 데이터의 성능 비교<a class="headerlink" href="#7-vqa" title="Permanent link">&para;</a></h3>
+<p><img alt="" src="../assets/images/876e1b467b64ac83136c3443866076ef_MD5.jpg" />
+- 바이오메디컬 VQA 데이터는 VQA, 아드 슬레이크, 패스 VQA로 나뉘며, 레이크는 <strong>오픈 셋 질문</strong>이 있고 나머지는 <strong>클로즈 셋 질문</strong>이다.</p>
+<ul>
+<li>
+<p>클로즈셋 질문은 정확도로 평가되고 오픈 질문은 리콜로 측정되며, LLaVA 변형이 일반 LLaVA보다 성능이 뛰어난 것으로 나타났다.</p>
+</li>
+<li>
+<p>LLaVA는 일반인 수준의 의학 지식을 가지고 있지만, 변형된 LLaVA는 의학적 지식으로 학습되어 어느 정도 의학적 지식을 가진 모델이 되었다.</p>
+</li>
+<li>
+<p>파인 튜닝을 통해 클로즈 셋 질문에서 소타를 달성하며, 오픈 셋 질문의 경우 슬레이크 소를 성취했지만, 다른 오픈 셋 질문에 대한 성취는 미흡했다.</p>
+</li>
+<li>
+<p>데이터가 커지면 성능이 향상되는 것을 확인했으며, 2단계 인스트럭션 팔로잉 데이터의 중요성도 강조되었다.</p>
+</li>
+</ul>
+<h3 id="8">8. ️🧠파인튜닝과 모델 성능 향상에 대한 논의<a class="headerlink" href="#8" title="Permanent link">&para;</a></h3>
+<p><img alt="" src="../assets/images/e8391d898c4bee5874c493e75d36b274_MD5.jpg" />
+- <strong>파인튜닝</strong>을 오래하면 기본적으로 모델 성능이 향상된다.</p>
+<ul>
+<li>
+<p>모델(LM)이 커질수록 성능이 역시 향상된다는 점은 예측 가능한 결과로 보인다.</p>
+</li>
+<li>
+<p>예를 들어, 중국어 질문을 라바에 주었을 때, 라바는 비록 중국어로 된 인스트럭션 팔로잉 데이터는 없지만, 제대로 답변하는 모습을 보인다.</p>
+</li>
+<li>
+<p>결론적으로, 바이오메디컬 분야에서 높은 수준의 인스트럭션 팔로잉 데이터셋을 생성하기 위해 셀프 인스트럭쳐 어프로치를 이용했다고 한다.</p>
+</li>
+<li>
+<p>그러나 모든 모델에서처럼 할루시네이션과 인덱스 문제는 여전히 존재한다고 언급된다.</p>
+</li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../202408121146/" class="md-footer__link md-footer__link--prev" aria-label="Previous: AIKU 24-2 DeepIntoDeep 10회 딥러닝 입문하기 - Segmentation">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                AIKU 24-2 DeepIntoDeep 10회 딥러닝 입문하기 - Segmentation
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../202408121200/" class="md-footer__link md-footer__link--next" aria-label="Next: 비디오에서 AIKU 24-2 모멘텀 5회 딥 지오메트리 인식 카메라 자체 보정하기">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                비디오에서 AIKU 24-2 모멘텀 5회 딥 지오메트리 인식 카메라 자체 보정하기
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.footer", "navigation.indexes", "navigation.sections", "navigation.top", "navigation.tracking", "toc.follow"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.471ce7a9.min.js"></script>
+      
+    
+  </body>
+</html>

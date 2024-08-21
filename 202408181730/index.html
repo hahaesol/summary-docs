@@ -1,0 +1,765 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://hahaesol.github.io/summary-docs/202408181730/">
+      
+      
+        <link rel="prev" href="../202408171304/">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.32">
+    
+    
+      
+        <title>카프카 기반 리그오브레전드 챔피언 추천 서비스 - Haesol's Summary Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.3cba04c6.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Haesol&#39;s Summary Docs" class="md-header__button md-logo" aria-label="Haesol's Summary Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Haesol's Summary Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              카프카 기반 리그오브레전드 챔피언 추천 서비스
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1M8 13h8v-2H8v2m9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1 0 1.71-1.39 3.1-3.1 3.1h-4V17h4a5 5 0 0 0 5-5 5 5 0 0 0-5-5Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5M7 15a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Haesol&#39;s Summary Docs" class="md-nav__button md-logo" aria-label="Haesol's Summary Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Haesol's Summary Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../202408121137/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Java 와 Docker(k8s) 잘하면 평생 먹고 산다
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../202408121146/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AIKU 24-2 DeepIntoDeep 10회 딥러닝 입문하기 - Segmentation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../202408121155/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AIKU 24-2 Momentum 5회 LLaVA-Mededit
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../202408121200/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    비디오에서 AIKU 24-2 모멘텀 5회 딥 지오메트리 인식 카메라 자체 보정하기
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../202408121201/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AIKU 24-2 세미나 5회 이미지 매칭 로컬 특징과 그 너머(DUSt3R)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../202408121203/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AI in Semiconductor Manufacturing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../202408121331/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AIKU 24-2 DeepIntoDeep 9회 딥러닝 입문하기 - Object Detection
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../202408121616/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PHONEME-LEVEL BERT FOR ENHANCED PROSODY OF TEXT-TO-SPEECH WITH GRAPHEME PREDICTIONS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../202408171304/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6년 묵은 레거시를 제거하며 앞으로의 6년 준비하기
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    카프카 기반 리그오브레전드 챔피언 추천 서비스
+  </span>
+  
+
+      </a>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<p>흥미로운 내용 3가지 :</p>
+<ul>
+<li>리그오브레전드 개인화 챔피언 추천 서비스는 유저의 게임 스타일을 반영해 맞춤형 추천을 제공하여 플레이 흥미를 높이는 것을 목표로 한다.  </li>
+<li>데이터 파이프라인, 클라우드 기반 관리 및 ML 모델링 기술이 서비스의 핵심 요소로, 이를 통해 유저에게 실시간으로 유용한 정보를 전달한다.  </li>
+<li>팀 구성원들이 데이터 엔지니어링, 웹 서비스 개발 및 ML Ops를 담당하며, 지속적으로 서비스 개선과 확장을 위해 노력하고 있다.  </li>
+</ul>
+<p>이 발표는 리그오브레전드에 특화된 개인화된 챔피언 추천 서비스 개발에 대한 내용을 다루고 있습니다. 개발 팀은 데이터 파이프라인, 클라우드 기반 데이터 관리, ML 모델링 기술을 활용하여 유저 맞춤형 서비스를 구현하였습니다. 특히, 게임 스타일에 맞춘 추천 시스템이 유저의 흥미를 높이고, 플레이의 폭을 확장하는 데 도움을 줄 수 있다는 점을 강조합니다. 이 영상을 통해 데이터 엔지니어링과 ML 기술을 활용한 실질적인 서비스 개발 과정을 배우고, 실제 적용 사례를 통해 영감을 얻을 수 있습니다.</p>
+<h1 id="_1">핵심주제<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<p>리그 오브 레전드의 <strong>개인화된</strong> 챔피언 추천 서비스는 유저의 <strong>게임 스타일</strong>을 반영합니다.</p>
+<ul>
+<li>
+<p>기존 추천 시스템이 <strong>일반적인 기준</strong>으로만 작동했지만, 유저의 성향은 다양하므로 맞춤형 접근이 필요합니다.</p>
+</li>
+<li>
+<p>이 서비스는 승리에 꼭 필요한 데이터를 활용하며, 유저의 <strong>티어 상승</strong>에 긍정적인 영향을 미칠 수 있습니다.</p>
+</li>
+</ul>
+<p>'데이터 드래곤'을 활용한 <strong>게임 데이터 모델링</strong>이 핵심으로 자리 잡았습니다.</p>
+<ul>
+<li>
+<p>JSON 파일을 기반으로 챔피언, 아이템, 게임 요소를 <strong>중앙 집중화</strong> 하여 효율적으로 관리합니다.</p>
+</li>
+<li>
+<p>패치 노트 데이터는 정기적으로 업데이트되어 게임의 변화에 즉각적으로 대응할 수 있게 돕습니다.</p>
+</li>
+</ul>
+<p><strong>파이프라인 아키텍처</strong>와 데이터 처리 과정이 체계적으로 설계되었습니다.</p>
+<ul>
+<li>
+<p>ETL 과정에 기초하여 AWS 등 클라우드 기술을 통해 데이터 흐름을 원활하게 처리합니다.</p>
+</li>
+<li>
+<p>크롤링된 데이터는 정제 과정을 거쳐 효율적으로 저장되며, 분석을 위해 다양한 형식으로 변환됩니다.</p>
+</li>
+</ul>
+<p><strong>ML 모델링</strong>을 통해 유저 데이터 분석 및 예측이 가능합니다.</p>
+<ul>
+<li>
+<p>트리 기반 모델을 활용하여 데이터를 <strong>비선형 관계</strong>로 잘 포착하고, 빠르게 학습하며 결과를 도출합니다.</p>
+</li>
+<li>
+<p>플로우 기반 환경과 AWS S3를 통해 기존 데이터의 관리 및 업데이트가 실시간으로 이루어집니다.</p>
+</li>
+</ul>
+<p>프로젝트가 <strong>완성된 데이터 파이프라인</strong>으로 큰 성과를 거두었습니다.</p>
+<ul>
+<li>
+<p>자동화와 스케줄링을 통해 데이터 수집과 정제가 효율적으로 이루어졌고, 카프카를 활용하여 데이터 처리의 <strong>핵심 내용을</strong> 성공적으로 구현했습니다.</p>
+</li>
+<li>
+<p>그러나 웹 페이지 개발 및 대규모 서비스 관리에서 아쉬움이 남아 개선의 필요성을 느끼고 있습니다.</p>
+</li>
+</ul>
+<h1 id="_2">타임라인<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h1>
+<h2 id="1-20">1. 🎉 20회 진 컨퍼런스 마지막 발표: 리그오브레전드 챔피언 추천 서비스<a class="headerlink" href="#1-20" title="Permanent link">&para;</a></h2>
+<p><img alt="" src="/assets/images/8edb4a5343287a6d184f94e154dac3d2_MD5.jpg" /></p>
+<ul>
+<li>
+<p>LP 팀은 "라피스"라는 뜻이며, 롤 프로젝트의 줄임말입니다. 그리고 이 프로젝트는 리그오브레전드의 개인화된 챔피언 추천 서비스를 목표로 하고 있습니다.</p>
+</li>
+<li>
+<p>목차는 데이터 파이프라인, 클라우드 기반 데이터 관리, ML 모델링 기술로 구성되어 있습니다. 이는 서비스의 전반적인 구성을 설명합니다.</p>
+</li>
+<li>
+<p>팀 구성은 4명으로 이루어져 있습니다. 선희 님과 발표자는 데이터 엔지니어링과 웹 서비스 개발을, 혜정 님이 ML 모델링과 ML Ops을, 그리고 수미 님이 뉴스레터 서비스 개발을 담당했습니다.</p>
+</li>
+<li>
+<p>이 프로젝트는 유저 맞춤형 서비스를 제공하여 유저의 흥미를 높이고 플레이의 폭을 확장하는 데 초점을 맞추고 있습니다.</p>
+</li>
+<li>
+<p>데이터 파이프라인과 클라우드 데이터 관리 및 ML 모델링 기술이 이 서비스의 핵심 요소입니다.</p>
+</li>
+</ul>
+<h2 id="2">2. ️🎮리그 오브 레전드를 위한 맞춤형 챔피언 추천 서비스<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
+<p><img alt="" src="/assets/images/441d24097fbe30925e3efb0cd13fa214_MD5.jpg" /></p>
+<ul>
+<li>
+<p>저희 <strong>LP 프로젝트</strong>는 리그 오브 레전드의 공식 게임 업데이트 정보를 바탕으로 유저 맞춤형 챔피언을 추천하는 서비스입니다.</p>
+</li>
+<li>
+<p>기존 서비스들은 일반적인 기준으로 추천했지만, 유저의 <strong>게임 스타일</strong>은 각각 다르므로, 이를 반영한 개인화된 추천 서비스가 필요합니다.</p>
+</li>
+<li>
+<p>예를 들어, 원거리 챔피언 선호하는 유저에게는 통계적으로 인기 있는 근거리 챔피언을 추천하는 것은 유용하지 않으므로, 유저 데이터에 기반한 추천이 중요합니다.</p>
+</li>
+<li>
+<p>이러한 개인화된 추천 서비스는 유저의 게임 흥미를 높이고, 실력 지표인 <strong>티어 상승</strong>에도 긍정적인 영향을 미칠 수 있습니다.</p>
+</li>
+<li>
+<p>저희는 라이어 API 데이터를 통해 유저 개인별 정보 및 게임 데이터를 추출하고, 승리에 직접적인 연관성을 가진 데이터를 활용했습니다.</p>
+</li>
+</ul>
+<h2 id="3">3. 게임 데이터 모델링과 패치 노트 관리<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
+<p><img alt="" src="/assets/images/d1ce4521c266b71e7b56e031f3f92818_MD5.jpg" /></p>
+<ul>
+<li>
+<p>피처를 선정하여 모델링을 활용할 수 있었으며, '데이터 드래곤'은 라이엇이 제공하는 JSON 파일로, 중앙 집중화를 목적으로 챔피언, 아이템, 게임 요소를 관리한다.</p>
+</li>
+<li>
+<p>이 JSON 파일은 버전 관리가 되어 있어, 게임이 업데이트될 때마다 신화서 업데이트된다.</p>
+</li>
+<li>
+<p>챔피언 추천 기능이 있어 챔피언 데이터의 업데이트 작업이 중요하며, 이를 위해 167개 챔피언에 대한 데이터를 JSON 키-값 형식으로 정리한 데이터베이스를 구축했다.</p>
+</li>
+<li>
+<p>마지막으로, 패치 노트 데이터는 2주 또는 한 달 간격으로 업데이트되어, 챔피언의 기본 능력치와 스킬, 아이템 등이 조정되며, 업데이트가 있을 경우 자동으로 크롤링하여 데이터베이스에 저장한다.</p>
+</li>
+</ul>
+<h2 id="4">4. 파이프라인 아키텍처와 데이터 처리 과정<a class="headerlink" href="#4" title="Permanent link">&para;</a></h2>
+<p><img alt="" src="/assets/images/2bfd13dadc67f56efd35b14873ec13e4_MD5.jpg" /></p>
+<ul>
+<li>
+<p>파이프라인 아키텍처는 ETL 과정에 맞춰 구성되어 있으며, 라이언 API 데이터는 상업적 활용 동의 후 게임 매치 데이터 요청이 가능하다.</p>
+</li>
+<li>
+<p>최신 패치노트 업데이트를 자동으로 처리하기 위해 AWS 이벤트 브릿지와 람다를 활용하여 스케줄링을 통한 프로세스를 구축했다.</p>
+</li>
+<li>
+<p>크롤링된 데이터는 정제 과정을 거쳐 S3와 MySQL DB에 저장되며, 널링된 패치노트를 구조화된 형태로 저장하였다.</p>
+</li>
+<li>
+<p>저장된 데이터는 JSON 형식으로 변환되며, 분석 효율성을 위해 CSV 포맷으로도 변환하여 S3에 저장한다.</p>
+</li>
+<li>
+<p>데이터베이스 파이프라인에서 활용할 데이터를 미리 구상하고 MySQL TV 내부에 테이블을 마련해 두었다.</p>
+</li>
+</ul>
+<h2 id="5">5. 서비스 설계를 위한 멀티모듈 아키텍처 소개<a class="headerlink" href="#5" title="Permanent link">&para;</a></h2>
+<p><img alt="" src="/assets/images/cd4e856824212de0e81f4211b6a28766_MD5.jpg" /></p>
+<ul>
+<li>
+<p>서비스의 요구 사항에 맞춰 <strong>DVL</strong>을 설계하였고, 주요 테이블링 챔피언을 기준으로 챔피언 버전과 패치노트 버전, 구동 요구 및 구독자 관리 등을 포함했습니다.</p>
+</li>
+<li>
+<p>웹 서비스는 백엔드를 코틀린과 스프링부트로 모듈 역할 분리를 통해 멀티모듈 아키텍처로 구축했으며, 이는 기능 확장과 유지 보수를 효과적으로 관리하게 해줍니다.</p>
+</li>
+<li>
+<p>모듈 구조는 도메인 모듈과 스토리지 모듈로 나뉘며, 스토리지 모듈은 데이터베이스 접근을 담당하고 도메인 모듈은 서비스를 포함합니다.</p>
+</li>
+<li>
+<p>데이터 엔지니어링 기술 및 클라우드 아키텍처를 활용하여, ETL 아키텍처와 함께 전체 데이터 파이프라인을 구성했습니다.</p>
+</li>
+<li>
+<p>아파치 카프카는 대규모 이벤트 스트리밍 플랫폼으로, 실시간 데이터를 처리하고 높은 처리량과 확장성을 제공합니다.</p>
+</li>
+</ul>
+<h2 id="6">6. 카프카를 통한 데이터 흐름 관리 및 서비스 구조<a class="headerlink" href="#6" title="Permanent link">&para;</a></h2>
+<p><img alt="" src="/assets/images/fbc15824b95cd07e4b13ba4f99d54c4f_MD5.jpg" /></p>
+<ul>
+<li>
+<p>저희 서비스에서는 <strong>API</strong>, <strong>배치</strong>, <strong>ML 서버</strong>를 연결하여 데이터 흐름을 <strong>메시지</strong>를 통해 관리하고 있습니다.</p>
+</li>
+<li>
+<p>카프카의 주요 구성 요소는 생산자, 소비자, 브로커로 구성되며, 각각의 역할은 데이터 메시지를 전달하고 저장하며 순서를 관리하는 것입니다.</p>
+</li>
+<li>
+<p>내부 데이터 흐름은 배치 서버가 API를 통해 전적 데이터를 로컬에 저장하고, 머신러닝을 통해 필요한 데이터를 전처리하여 카프카 브로커로 전송합니다.</p>
+</li>
+<li>
+<p>이러한 과정에서 ML 서버는 새로운 데이터로 모델을 갱신하고, 업데이트된 사용자 전적 평가 데이터는 다시 몽고DB에 적재됩니다.</p>
+</li>
+<li>
+<p>두 번째 흐름은 DB 변경 사항을 감지해 카프카 커넥터를 이용해 메시지를 발행하고, API 서버를 통해 구독자에게 뉴스레터를 발송하는 방식으로 이루어집니다.</p>
+</li>
+</ul>
+<h2 id="7-ml">7. 분산 아키텍처와 ML 모델링 환경 설명<a class="headerlink" href="#7-ml" title="Permanent link">&para;</a></h2>
+<p><img alt="" src="/assets/images/494441255da458e2e1c4b29dd27824de_MD5.jpg" /></p>
+<ul>
+<li>
+<p>스터 생성 및 발성을 통해 백그라운드 비동기를 처리하고, 카프카의 대규모 처리 기능을 활용하여 <strong>확장성 있는 분산 아키텍처</strong>를 구축할 수 있다.</p>
+</li>
+<li>
+<p>ML 모델링 파트의 아키텍처에서는 빨간색으로 표시된 프라이머리 ML 서버가 카프카 브로커를 구독하며, 유저 데이터로 모델 인퍼런스를 진행해 LP 티어를 계산하고 그 결과를 몽고DB 컬렉션에 인서트한다.</p>
+</li>
+<li>
+<p>사용한 모델 종류는 <strong>트리 기반 모델</strong>로, 이는 데이터의 비선형 관계를 잘 포착하고, 계산 효율성이 뛰어나 큰 데이터에 대해서도 빠르게 학습할 수 있다.</p>
+</li>
+<li>
+<p>LP 서비스의 실험 환경은 다양한 트리 기반 모델을 하이퍼 파라미터 튜닝하며 실험할 수 있도록 구성되었으며, 실시간 업데이트되는 유적 게임 데이터에 맞춰 짧은 주기로 실험이 필요하다.</p>
+</li>
+<li>
+<p>문제를 해결하기 위해 플로우 기반의 옵스 환경을 구축하고, 모델을 AWS S3에 저장한 후 API 형태로 배포하여 메타데이터를 관리하였다.</p>
+</li>
+</ul>
+<h2 id="8">8. 프로젝트 회고 및 개선점 공유<a class="headerlink" href="#8" title="Permanent link">&para;</a></h2>
+<p><img alt="" src="/assets/images/67189a0e9313fa2186121293cc329c43_MD5.jpg" /></p>
+<ul>
+<li>
+<p>22에 <strong>ML 플로우 UI</strong>를 띄워 실험 정보를 조회하며 ML 모델링을 진행했고, <strong>완성된 데이터 파이프라인 아키텍처</strong>에 상당히 만족했다.</p>
+</li>
+<li>
+<p>데이터 수집 및 정제 자동화를 스케줄링하며, 카프카를 통해 서버가 데이터를 처리하는 방식까지 핵심 내용을 모두 구현했다.</p>
+</li>
+<li>
+<p>프로젝트하면서 로직 빌드 과정에서 많은 트러블이 발생해 역할 분리에 대해 고민이 많아졌지만, 개인적으로는 제가 <strong>좋아하는 주제</strong>로 프로젝트를 진행하게 되어 큰 위안이 되었다.</p>
+</li>
+<li>
+<p>개선점으로는 <strong>웹페이지 개발</strong>의 부족함과 대규모 서비스로서의 로인 관리 미비점이 아쉬웠으며, 특히 크롤링 알림 서비스 구현 필요성을 느꼈다.</p>
+</li>
+<li>
+<p>마지막으로 팀 이름인 '라스트 피스'는 인기 상품이 품절된 의미를 담아 정해졌으며, 이 프로젝트가 많은 사람들이 주목받기를 바란다.</p>
+</li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../202408171304/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 6년 묵은 레거시를 제거하며 앞으로의 6년 준비하기">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                6년 묵은 레거시를 제거하며 앞으로의 6년 준비하기
+              </div>
+            </div>
+          </a>
+        
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.footer", "navigation.indexes", "navigation.sections", "navigation.top", "navigation.tracking", "toc.follow"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.471ce7a9.min.js"></script>
+      
+    
+  </body>
+</html>
